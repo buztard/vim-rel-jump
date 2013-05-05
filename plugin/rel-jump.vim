@@ -1,3 +1,8 @@
+" rel-jumps.vim - Turn range up and down movements into jump motions
+" Maintainer:  Bastian Winkler <buz@netbuz.org>
+" Version:     1.0
+" License:     The same as vim itself
+
 if exists('g:loaded_rel_jump')
     finish
 endif
@@ -17,4 +22,3 @@ endfunction
 
 nnoremap <silent> j :<C-U>call RelJump('j')<CR>
 nnoremap <silent> k :<C-U>call RelJump('k')<CR>
-
