@@ -1,0 +1,35 @@
+*rel-jump.txt* Turn up-down motions into jump-motions
+
+Author:  Bastian Winkler <buz at netbuz.org>
+License: Same terms as Vim itself (see |license|)
+
+SUMMARY                                                            *rel-jump*
+
+In addition to printing line numbers in a sequential way, recent Vim versions
+also support showing line numbers relative to the cursor position by setting
+the |'relativenumber'| option. With this option enabled, it's way more
+comfortable to go to a line that's visible on the screen by typing 23k instead
+of 1827G. But as a drawback using [count]j and [count]k is not a jump-motion,
+so you won't be able to jump back to the previous line using <C-O>. (See
+|jump-motions| for details). To fix this behavior, this plugin adds a jump
+mark every time you precede a vertical motion with |j| or |k| with a [count].
+
+OPTIONS                                                    *rel-jump-options*
+
+In case you only want to add jump marks for larger motions than two lines, set
+this variable to a number of choice.
+>
+    let g:rel_jump_min_distance = 5
+<
+
+HINTS                                                        *rel-jump-hints*
+
+This plugin only adds jumps to motions with j and k. If you really prefer
+using <Up> and <Down> instead of keeping your fingers on the home-row, you can
+put this in your vimrc:
+>
+    nnoremap <silent> <Up> :<C-U>call RelJump('k')<CR>
+    nnoremap <silent> <Down> :<C-U>call RelJump('j')<CR>
+<
+
+vim:tw=78:et:ft=help
