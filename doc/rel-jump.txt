@@ -14,13 +14,25 @@ so you won't be able to jump back to the previous line using <C-O>. (See
 |jump-motions| for details). To fix this behavior, this plugin adds a jump
 mark every time you precede a vertical motion with |j| or |k| with a [count].
 
+
 OPTIONS                                                    *rel-jump-options*
+
+                                                    *g:rel_jump_min_distance*
 
 In case you only want to add jump marks for larger motions than two lines, set
 this variable to a number of choice.
 >
     let g:rel_jump_min_distance = 5
 <
+
+                                                      *g:rel_jump_first_char*
+
+Jump to the first visible char in the destination line. This emulates the
+behaviour of of the [count]G command and is disabled by default.
+>
+    let g:rel_jump_first_char = 1
+<
+
 
 HINTS                                                        *rel-jump-hints*
 
