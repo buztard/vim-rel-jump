@@ -33,6 +33,19 @@ behaviour of of the [count]G command and is disabled by default.
     let g:rel_jump_first_char = 1
 <
 
+                                                       *g:rel_jump_move_down*
+
+Specify the key(s) to be used to move down. Defaults to j.
+>
+    let g:rel_jump_move_down = 'gj'
+<
+
+                                                         *g:rel_jump_move_up*
+
+Specify the key(s) to be used to move up. Defaults to k.
+>
+    let g:rel_jump_move_down = 'gk'
+<
 
 HINTS                                                        *rel-jump-hints*
 
